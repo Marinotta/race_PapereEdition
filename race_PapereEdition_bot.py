@@ -33,7 +33,7 @@ duck_gifs = [
 async def rankingPapere(ctx):
     try:
         # Load the CSV and format the ranking message
-        df = pd.read_csv(r'C:\Users\marin\race\output100.csv')
+        df = pd.read_csv(r'./output100.csv')
         ranking_message = "🦆 **Race Papere Edition** 🦆\n\n"
         for index, row in df.iterrows():
             gif = random.choice(duck_gifs)  # Select a random GIF

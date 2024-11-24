@@ -48,4 +48,3 @@ async def rankingPapere(ctx):
 
 # Run the bot
 bot.run(token)  # Use the token securely
-

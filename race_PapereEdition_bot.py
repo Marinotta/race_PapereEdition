@@ -30,18 +30,40 @@ duck_gifs = [
 
 # Command to upload the ranking
 @bot.command()
-async def rankingPapere(ctx):
+# Command to upload the ranking
+@bot.command()
+async def rankingPapere(ctx, player_name: str = None):
     try:
-        # Load the CSV and format the ranking message
+        # Load the CSV
         df = pd.read_csv(r'./output100.csv')
-        ranking_message = "🦆 **Race Papere Edition** 🦆\n\n"
-        for index, row in df.iterrows():
-            gif = random.choice(duck_gifs)  # Select a random GIF
-            ranking_message += f"{index + 1}. {row['Player']} - {row['Total Sum']} points\n"
-            ranking_message += f"{gif}\n"  # Add the GIF to the message
+        
+        if player_name:
+            # Search for the player in the CSV
+            player_data = df[df['Player'].str.contains(player_name, case=False, na=False)]
+            
+            if player_data.empty:
+                await ctx.send(f"Player '{player_name}' not found in the ranking!")
+                return
+            
+            # Send the specific player's ranking
+            ranking_message = f"🦆 **{player_name}'s Ranking** 🦆\n\n"
+            for index, row in player_data.iterrows():
+                gif = random.choice(duck_gifs)  # Select a random GIF
+                ranking_message += f"{index + 1}. {row['Player']} - {row['Total Sum']} points\n"
+                ranking_message += f"{gif}\n"  # Add the GIF to the message
+            
+            await ctx.send(ranking_message)
+        else:
+            # If no player name is provided, show the full ranking
+            ranking_message = "🦆 **Race Papere Edition** 🦆\n\n"
+            for index, row in df.iterrows():
+                gif = random.choice(duck_gifs)  # Select a random GIF
+                ranking_message += f"{index + 1}. {row['Player']} - {row['Total Sum']} points\n"
+                ranking_message += f"{gif}\n"  # Add the GIF to the message
 
-        # Send the ranking message
-        await ctx.send(ranking_message)
+            # Send the full ranking message
+            await ctx.send(ranking_message)
+            
     except Exception as e:
         await ctx.send("Oops! Something went wrong!")
         print(e)

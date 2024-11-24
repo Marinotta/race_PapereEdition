@@ -11,4 +11,4 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Command to run your bot (update with the correct file name)
-CMD ["python", "race_papereEdition_bot.py"]
+CMD ["python", "race_PapereEdition_bot.py"]

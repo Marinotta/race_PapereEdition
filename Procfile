@@ -1,1 +1,1 @@
-web: python race_papereEdition_bot.py
+web: python race_PapereEdition_bot.py

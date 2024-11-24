@@ -5,10 +5,9 @@ import random  # Import the random module
 import os
 from dotenv import load_dotenv
 
+# Load environment variables
 load_dotenv()  # This will load the environment variables from .env.txt
-
 token = os.getenv('DISCORD_TOKEN')  # Get the token from the environment
-
 
 # Set up intents
 intents = discord.Intents.default()
@@ -30,28 +29,26 @@ duck_gifs = [
 
 # Command to upload the ranking
 @bot.command()
-# Command to upload the ranking
-@bot.command()
 async def rankingPapere(ctx, player_name: str = None):
     try:
         # Load the CSV
-        df = pd.read_csv(r'./output100.csv')
+        df = pd.read_csv('./output100.csv')  # Ensure that the file path is correct
         
         if player_name:
             # Search for the player in the CSV
             player_data = df[df['Player'].str.contains(player_name, case=False, na=False)]
-            
+
             if player_data.empty:
                 await ctx.send(f"Player '{player_name}' not found in the ranking!")
                 return
-            
+
             # Send the specific player's ranking
             ranking_message = f"🦆 **{player_name}'s Ranking** 🦆\n\n"
             for index, row in player_data.iterrows():
                 gif = random.choice(duck_gifs)  # Select a random GIF
                 ranking_message += f"{index + 1}. {row['Player']} - {row['Total Sum']} points\n"
                 ranking_message += f"{gif}\n"  # Add the GIF to the message
-            
+
             await ctx.send(ranking_message)
         else:
             # If no player name is provided, show the full ranking
@@ -63,10 +60,10 @@ async def rankingPapere(ctx, player_name: str = None):
 
             # Send the full ranking message
             await ctx.send(ranking_message)
-            
+
     except Exception as e:
         await ctx.send("Oops! Something went wrong!")
-        print(e)
+        print(e)  # Debugging error message
 
 # Run the bot
-bot.run(token)  # Use the token securely
+bot.run(token)

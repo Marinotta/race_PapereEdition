@@ -49,7 +49,7 @@ mosconi_gifs = [
 async def rankingPapere(ctx, player_name: str = None):
     try:
         # Load the CSV
-        df = pd.read_csv(r'./output100.csv')
+        df = pd.read_csv(r'./output100.csv', delimiter=";"))
         
         if player_name:
             # Search for the player in the CSV

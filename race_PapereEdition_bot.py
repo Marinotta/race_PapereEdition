@@ -53,7 +53,7 @@ async def rankingPapere(ctx, player_name: str = None):
         
         if player_name:
             # Search for the player in the CSV
-            player_data = df[df['Player'].str.contains(player_name, case=False, na=False)]
+            player_data = df[df['Nome'].str.contains(player_name, case=False, na=False)]
             
             if player_data.empty:
                 await ctx.send(f"Player '{player_name}' not found in the ranking!")

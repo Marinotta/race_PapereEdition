@@ -52,12 +52,17 @@ async def rankingPapere(ctx, player_name: str = None):
         df = pd.read_csv(r'./output100.csv', delimiter=",")
         
         if player_name:
-            # Search for the player in the CSV
-            player_data = df[df['Nome'].str.contains(player_name, case=False, na=False)]
+            # Normalizza i nomi dei giocatori per la ricerca
+            player_name = player_name.strip().lower()
+            df['Nome'] = df['Nome'].str.strip().str.lower()
+
+            # Cerca il giocatore
+            player_data = df[df['Nome'].str.contains(player_name, na=False)]
             
             if player_data.empty:
-                await ctx.send(f"Player '{player_name}' not found in the ranking!")
+                await ctx.send(f"🦆 Player '{player_name}' not found in the ranking! 🦆")
                 return
+            
             
             # Send the specific player's ranking
             ranking_message = f"🦆 **{player_name}'s Ranking** 🦆\n\n"

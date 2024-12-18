@@ -48,22 +48,30 @@ mosconi_gifs = [
 @bot.command()
 async def rankingPapere(ctx, player_name: str = None):
     try:
-        print("Caricamento del CSV...")
+        # Caricamento del file CSV
+        await ctx.send("📂 Caricamento del file CSV...")
         df = pd.read_csv('./output100.csv')
-        print("CSV caricato con successo!")
-        
+        await ctx.send("✅ CSV caricato con successo!")
+
+        # Mostra le colonne del CSV
+        await ctx.send(f"📊 Colonne trovate nel CSV: {', '.join(df.columns)}")
+
         if player_name:
-            print(f"Ricerca del giocatore: {player_name}")
+            await ctx.send(f"🔍 Ricerca per il giocatore: **{player_name}**")
             player_name = player_name.strip().lower()
             df['Nome'] = df['Nome'].str.strip().str.lower()
 
+            # Mostra i primi 5 nomi per debug
+            nomi_esempio = df['Nome'].head(5).tolist()
+            await ctx.send(f"📝 Esempi di nomi preprocessati: {', '.join(nomi_esempio)}")
+
+            # Cerca il giocatore
             player_data = df[df['Nome'].str.contains(player_name, na=False)]
-            
             if player_data.empty:
-                print(f"Giocatore '{player_name}' non trovato.")
-                await ctx.send(f"🦆 Player '{player_name}' not found in the ranking! 🦆")
+                await ctx.send(f"🦆 Player '{player_name}' non trovato nel ranking!")
                 return
-            
+
+            # Ottieni la prima riga corrispondente
             row = player_data.iloc[0]
             gif = random.choice(duck_gifs)
             ranking_message = (
@@ -72,18 +80,16 @@ async def rankingPapere(ctx, player_name: str = None):
                 f"📊 Total Sum: {row['Total Sum']} points\n"
                 f"{gif}"
             )
-            print("Messaggio del giocatore creato con successo!")
             await ctx.send(ranking_message)
         else:
-            print("Nessun nome fornito, invio il link di Looker Studio.")
             await ctx.send(
                 "Here's the full 🦆 **Race Papere Edition** 🦆 ranking:\n"
                 "🔗 [Click here to view the ranking](https://lookerstudio.google.com/reporting/8cd9d538-6a88-4fa9-9646-6d786e625a05)"
             )
     except Exception as e:
         mosconi_gif = random.choice(mosconi_gifs)
-        await ctx.send(f"Oops! Something went wrong! {mosconi_gif}")
-        print(f"Errore: {e}")
+        await ctx.send(f"❌ Oops! Something went wrong! {mosconi_gif}")
+        await ctx.send(f"🛠️ Errore: `{str(e)}`")
         
 # Run the bot
 bot.run(token)

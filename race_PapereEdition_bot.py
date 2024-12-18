@@ -48,30 +48,25 @@ mosconi_gifs = [
 @bot.command()
 async def rankingPapere(ctx, player_name: str = None):
     try:
-        # Caricamento del file CSV
+        # Load the CSV file
         await ctx.send("📂 Caricamento del file CSV...")
         df = pd.read_csv('./output100.csv')
         await ctx.send("✅ CSV caricato con successo!")
 
-        # Mostra le colonne del CSV
-        await ctx.send(f"📊 Colonne trovate nel CSV: {', '.join(df.columns)}")
+        # Convert the 'Nome' column to strings
+        df['Nome'] = df['Nome'].astype(str).str.strip().str.lower()
 
         if player_name:
             await ctx.send(f"🔍 Ricerca per il giocatore: **{player_name}**")
             player_name = player_name.strip().lower()
-            df['Nome'] = df['Nome'].str.strip().str.lower()
 
-            # Mostra i primi 5 nomi per debug
-            nomi_esempio = df['Nome'].head(5).tolist()
-            await ctx.send(f"📝 Esempi di nomi preprocessati: {', '.join(nomi_esempio)}")
-
-            # Cerca il giocatore
+            # Search for the player
             player_data = df[df['Nome'].str.contains(player_name, na=False)]
             if player_data.empty:
-                await ctx.send(f"🦆 Player '{player_name}' non trovato nel ranking!")
+                await ctx.send(f"🦆 Player '{player_name}' not found in the ranking!")
                 return
 
-            # Ottieni la prima riga corrispondente
+            # Get the first matching row
             row = player_data.iloc[0]
             gif = random.choice(duck_gifs)
             ranking_message = (

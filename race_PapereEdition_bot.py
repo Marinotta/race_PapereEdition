@@ -46,7 +46,7 @@ mosconi_gifs = [
 
 # Command to upload the ranking
 @bot.command()
-async def rankingPapere(ctx, player_name: str = None):
+async def rankingPapere(ctx, *, player_name: str = None):
     try:
         # Load the CSV file
         df = pd.read_csv('./output100.csv')
@@ -55,11 +55,11 @@ async def rankingPapere(ctx, player_name: str = None):
         df['Nome'] = df['Nome'].astype(str)
 
         if player_name:
+            player_name = player_name.strip()  # Remove leading/trailing spaces
             await ctx.send(f"🔍 Ricerca per il giocatore: **{player_name}**")
-            player_name = player_name
 
             # Search for the player
-            player_data = df[df['Nome'].str.contains(player_name, na=False)]
+            player_data = df[df['Nome'].str.contains(player_name, na=False, case=False)]
             if player_data.empty:
                 await ctx.send(f"🦆 Player '{player_name}' not found in the ranking!")
                 return

@@ -49,7 +49,7 @@ mosconi_gifs = [
 async def rankingPapere(ctx, *, player_name: str = None):
     try:
         # Load the CSV file
-        df = pd.read_csv('./output100.csv')
+        df = pd.read_csv('./output100.csv', delimiter=",")
 
         # Convert the 'Nome' column to strings
         df['Nome'] = df['Nome'].astype(str)

@@ -49,7 +49,7 @@ mosconi_gifs = [
 async def rankingPapere(ctx, *, player_name: str = None):
     try:
         # Load the CSV file with explicit delimiter
-        df = pd.read_csv('./output100.csv', delimiter=',')
+        df = pd.read_csv('./output100.csv', delimiter=';')
         
         # Clean up player names (strip spaces and normalize)
         df['Nome'] = df['Nome'].str.strip()  # Strip spaces

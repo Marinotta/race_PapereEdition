@@ -49,12 +49,10 @@ mosconi_gifs = [
 async def rankingPapere(ctx, player_name: str = None):
     try:
         # Load the CSV file
-        await ctx.send("📂 Caricamento del file CSV...")
         df = pd.read_csv('./output100.csv')
-        await ctx.send("✅ CSV caricato con successo!")
 
         # Convert the 'Nome' column to strings
-        df['Nome'] = df['Nome'].astype(str).str.strip()
+        df['Nome'] = df['Nome'].astype(str)
 
         if player_name:
             await ctx.send(f"🔍 Ricerca per il giocatore: **{player_name}**")

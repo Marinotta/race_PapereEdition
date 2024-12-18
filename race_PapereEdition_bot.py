@@ -77,7 +77,7 @@ async def rankingPapere(ctx, *, player_name: str = None):
             row = player_data.iloc[0]
             gif = random.choice(duck_gifs)
             ranking_message = (
-                f"🦆 **Ranking for {row['Nome'].capitalize()}** 🦆\n\n"
+                f"🦆 **Ranking for {row['Nome'].title()}** 🦆\n\n"
                 f"🏅 Rank: {row['Rank']}\n"
                 f"📊 Total Sum: {row['Total Sum']} points\n"
                 f"{gif}"

@@ -48,18 +48,27 @@ mosconi_gifs = [
 @bot.command()
 async def rankingPapere(ctx, *, player_name: str = None):
     try:
-        # Load the CSV file
-        df = pd.read_csv('./output100.csv', delimiter=",")
-
-        # Convert the 'Nome' column to strings
-        df['Nome'] = df['Nome'].astype(str)
+        # Load the CSV file with explicit delimiter
+        df = pd.read_csv('./output100.csv', delimiter=',')
+        
+        # Clean up player names (strip spaces and normalize)
+        df['Nome'] = df['Nome'].str.strip()  # Strip spaces
+        df['Nome'] = df['Nome'].apply(lambda x: ' '.join(x.split()))  # Remove extra spaces within names
+        
+        # Remove rows with NaN values in important columns (e.g., 'Nome' and 'Total Sum')
+        df = df.dropna(subset=['Nome', 'Total Sum'])
+        
+        # Debugging: Print the first few rows and column names
+        print(df.head())
+        print(df.columns)
 
         if player_name:
-            player_name = player_name.strip()  # Remove leading/trailing spaces
+            print(f"Searching for: '{player_name}'")  # Debugging the input
             await ctx.send(f"🔍 Ricerca per il giocatore: **{player_name}**")
-
-            # Search for the player
+            
+            # Make the search case-insensitive and ensure the name matches correctly
             player_data = df[df['Nome'].str.contains(player_name, case=False, na=False)]
+            
             if player_data.empty:
                 await ctx.send(f"🦆 Player '{player_name}' not found in the ranking!")
                 return

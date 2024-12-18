@@ -63,7 +63,7 @@ async def rankingPapere(ctx, player_name: str = None):
             ranking_message = f"🦆 **{player_name}'s Ranking** 🦆\n\n"
             for index, row in player_data.iterrows():
                 gif = random.choice(duck_gifs)  # Select a random GIF
-                ranking_message += f"{index + 1}. {row['Player']} - {row['Total Sum']} points\n"
+                ranking_message += f"{index + 1}. {row['Nome']} - {row['Total Sum']} points\n"
                 ranking_message += f"{gif}\n"  # Add the GIF to the message
             
             await ctx.send(ranking_message)

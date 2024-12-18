@@ -58,7 +58,7 @@ async def rankingPapere(ctx, player_name: str = None):
 
         if player_name:
             await ctx.send(f"🔍 Ricerca per il giocatore: **{player_name}**")
-            player_name = player_name.strip()
+            player_name = player_name
 
             # Search for the player
             player_data = df[df['Nome'].str.contains(player_name, na=False)]

@@ -64,7 +64,6 @@ async def rankingPapere(ctx, *, player_name: str = None):
 
         if player_name:
             print(f"Searching for: '{player_name}'")  # Debugging the input
-            await ctx.send(f"🔍 Ricerca per il giocatore: **{player_name}**")
             
             # Make the search case-insensitive and ensure the name matches correctly
             player_data = df[df['Nome'].str.contains(player_name, case=False, na=False)]

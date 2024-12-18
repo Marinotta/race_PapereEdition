@@ -59,7 +59,7 @@ async def rankingPapere(ctx, *, player_name: str = None):
             await ctx.send(f"🔍 Ricerca per il giocatore: **{player_name}**")
 
             # Search for the player
-            player_data = df[df['Nome'].str.contains(player_name, na=False, case=False)]
+            player_data = df[df['Nome'].str.contains(player_name, case=False, na=False)]
             if player_data.empty:
                 await ctx.send(f"🦆 Player '{player_name}' not found in the ranking!")
                 return

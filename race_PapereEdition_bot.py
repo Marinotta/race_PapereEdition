@@ -54,11 +54,11 @@ async def rankingPapere(ctx, player_name: str = None):
         await ctx.send("✅ CSV caricato con successo!")
 
         # Convert the 'Nome' column to strings
-        df['Nome'] = df['Nome'].astype(str).str.strip().str.lower()
+        df['Nome'] = df['Nome'].astype(str).str.strip()
 
         if player_name:
             await ctx.send(f"🔍 Ricerca per il giocatore: **{player_name}**")
-            player_name = player_name.strip().lower()
+            player_name = player_name.strip()
 
             # Search for the player
             player_data = df[df['Nome'].str.contains(player_name, na=False)]

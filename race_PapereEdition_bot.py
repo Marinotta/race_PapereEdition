@@ -69,19 +69,38 @@ async def rankingPapere(ctx, *, player_name: str = None):
             player_data = df[df['Nome'].str.contains(player_name, case=False, na=False)]
             
             if player_data.empty:
-                await ctx.send(f"🦆 Player '{player_name}' not found in the ranking!")
-                return
+                mosconi_gif = random.choice(mosconi_gifs)
 
+                # Create an embed for the Mosconi GIF
+                embed = discord.Embed(
+                    title="🦆 Player Not Found!",
+                    description=f"Player '{player_name}' was not found in the ranking. Try again!",
+                    color=discord.Color.red()  # Choose a color for the embed
+                )
+                embed.set_image(url=mosconi_gif)  # Add the Mosconi GIF as an image
+
+                # Send the embed
+                await ctx.send(embed=embed)
+                return
+                
             # Get the first matching row
             row = player_data.iloc[0]
             gif = random.choice(duck_gifs)
-            ranking_message = (
-                f"🦆 **Ranking for {row['Nome'].title()}** 🦆\n\n"
-                f"🏅 Rank: {row['Rank']}\n"
-                f"📊 Total Sum: {row['Total Sum']} points\n"
-                f"{gif}"
+            # Create an embed with the GIF
+            embed = discord.Embed(
+                title=f"🦆 Ranking for {row['Nome'].title()} 🦆",
+                description=(
+                    f"🏅 **Rank**: {row['Rank']}\n"
+                    f"📊 **Total Sum**: {row['Total Sum']} points"
+                ),
+                color=discord.Color.yellow()  # Choose a color for the embed
             )
-            await ctx.send(ranking_message)
+            embed.set_image(url=gif)  # Add the GIF as an image
+
+            # Send the embed
+            await ctx.send(embed=embed)
+
+
         else:
             await ctx.send(
                 "Here's the full 🦆 **Race Papere Edition** 🦆 ranking:\n"

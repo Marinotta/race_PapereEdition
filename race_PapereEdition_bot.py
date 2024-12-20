@@ -30,19 +30,21 @@ duck_gifs = [
     "https://tenor.com/ca/view/running-ducks-ducks-running-racing-racing-ducks-gif-27273716",
     "https://tenor.com/ca/view/vlod-rubber-duck-duck-vlod2-bathtub-gif-3004830228421712541",
     "https://i.gifer.com/XOsX.gif",
-    
+    "https://tenor.com/ca/view/ducks-ducks-are-laughing-laughter-point-a-finger-ducks-laughing-gif-12948112141241137122",
+    "https://tenor.com/ca/view/duck-sigma-duck-alpha-duck-alpha-male-duck-alpha-female-duck-gif-7005165387130923807",
+    "https://tenor.com/ca/view/duck-waddle-gif-12573743802001671415"
 ]
 
 mosconi_gifs = [
-    "https://tenor.com/Ynz3.gif",
-    "https://tenor.com/7joI.gif",
-    "https://tenor.com/ZDNG.gif",
-    "https://tenor.com/bQoE2.gif",
-    "https://tenor.com/bDujp.gif",
-    "https://tenor.com/bfuRv.gif",
-    "https://tenor.com/0UMA.gif",
-    "https://tenor.com/ZDLR.gif",
-    "https://tenor.com/XNVl.gif"
+    "https://tenor.com/view/mosconi-germano-mosconi-ah-non-lo-so-io-gif-11967977",
+    "https://tenor.com/view/mosconi-germano-chop-chop-chiss%C3%A0che-non-m-incazza-eh-gif-14096850",
+    "https://tenor.com/ca/view/if-i-dont-curse-now-italian-meme-gif-12268654",
+    "https://tenor.com/ca/view/non-bestemmiare-germano-mosconi-gif-24841842",
+    "https://tenor.com/ca/view/germano-mosconi-non%C3%A8possibile-dio-cane-gif-21765301",
+    "https://tenor.com/ca/view/germano-mosconi-vai-in-mona-porco-dio-gif-16047543",
+    "https://tenor.com/ca/view/mosconi-ma-che-oh-gif-12572262",
+    "https://tenor.com/ca/view/if-i-don-curse-italian-meme-gif-12268541",
+    "https://tenor.com/ca/view/portanna-mosconi-portannalamadonna-gif-11830913"
 ]
 
 # Command to upload the ranking

@@ -34,14 +34,15 @@ duck_gifs = [
 ]
 
 mosconi_gifs = [
-    "https://tenor.com/ca/view/if-i-don-curse-italian-meme-gif-12268541",
-    "https://tenor.com/ca/view/germano-mosconi-gif-14446759386453302977",
-    "https://tenor.com/ca/view/germano-mosconi-gif-20862777",
-    "https://tenor.com/ca/view/bestemmia-gif-7543959",
-    "https://tenor.com/ca/view/if-i-dont-curse-now-italian-meme-gif-12268654",
-    "https://tenor.com/ca/view/mosconi-pugno-gif-24424526",
-    "https://tenor.com/ca/view/germano-mosconi-germanomosconi-mona-porta-gif-8567467",
-    "https://tenor.com/ca/view/portanna-mosconi-portannalamadonna-gif-11830913"
+    "https://tenor.com/Ynz3.gif",
+    "https://tenor.com/7joI.gif",
+    "https://tenor.com/ZDNG.gif",
+    "https://tenor.com/bQoE2.gif",
+    "https://tenor.com/bDujp.gif",
+    "https://tenor.com/bfuRv.gif",
+    "https://tenor.com/0UMA.gif",
+    "https://tenor.com/ZDLR.gif",
+    "https://tenor.com/XNVl.gif"
 ]
 
 # Command to upload the ranking
@@ -82,7 +83,7 @@ async def rankingPapere(ctx, *, player_name: str = None):
                 # Send the embed
                 await ctx.send(embed=embed)
                 return
-                
+
             # Get the first matching row
             row = player_data.iloc[0]
             gif = random.choice(duck_gifs)

@@ -18,20 +18,23 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Duck GIFs for top performers
 duck_gifs = [
-    "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGMwMTZnbndkNmw3ODFndjkxa2c3amNkamMybWRkOWI2ZDllZGV0NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RQ7rwyOeftc5z2HTyc/giphy.gif",
-    "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTBpMzVpaWlseWdmYmt5c3RpZDJ4YnU4ZzhmY29qcWdqZGU0NG5kZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2Je1eIySBj8c94ly/giphy.gif",
-    "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Fjb2R5MWlkdjl0YWEzdXZsbHZ2amVhdndhN2xwanNrYjk5a3lxMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6MbaZ4f6650Xv3kA/giphy.gif",
-    "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExajZmczFqcXNjbm0xZXpkMDZjMDU1d2Zvd3AxeG0yYnNqMXlyZWc5NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6MbkfI3ERA6yTqPm/giphy.gif",
-    "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTJpOGM3NDh1Zzg5dXBpd2tjaHpjZmN0ZWphMmpvNGt3cGg5MnI4biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUOwG3MyaiItznFs6k/giphy-downsized-large.gif",
-    "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2RkczQ2OHlrdTBtZWN0cHQzOWh5eWtnOGpmejhxbmp3eTEzdDduaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WYPP1DQ7pnXBUWXdRw/giphy-downsized-large.gif",
-    "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGJjNzZmeGFtamN3NTBjbm9iOHMxd2diZ3IyNGI1bjRvY2lnZzA2YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7OxMSjThgSRgsHXOFc/giphy.gif",
+    "https://tenor.com/ca/view/pato-gif-11059602315596939885",
+    "https://tenor.com/ca/view/duck-gif-21256906",
+    "https://tenor.com/ca/view/twerken-twerk-duck-maincord-gif-25993381",
+    "https://tenor.com/ca/view/taskmaster-tm-alex-horne-inflatable-duck-rubber-duck-gif-5430158460302803264",
+    "https://tenor.com/ca/view/duck-waddle-gif-12573743802001671415",
+    "https://tenor.com/ca/view/duck-gif-12859659001105063589",
+    "https://tenor.com/ca/view/canard-duck-sleepy-asleep-tired-gif-17506958111258810547",
     "https://tenor.com/ca/view/shenmue-shenmue2-shenmue-duck-racing-shenmue-duck-racing-start-duck-racing-gif-25744150",
     "https://tenor.com/ca/view/excited-dancing-ducks-gif-3639054",
     "https://tenor.com/ca/view/running-ducks-ducks-running-racing-racing-ducks-gif-27273716",
     "https://tenor.com/ca/view/vlod-rubber-duck-duck-vlod2-bathtub-gif-3004830228421712541",
-    "https://i.gifer.com/XOsX.gif",
+    "https://tenor.com/ca/view/shenmue-shenmue2-shenmue-duck-racing-shenmue-duck-racing-start-duck-racing-gif-25744150",
     "https://tenor.com/ca/view/ducks-ducks-are-laughing-laughter-point-a-finger-ducks-laughing-gif-12948112141241137122",
     "https://tenor.com/ca/view/duck-sigma-duck-alpha-duck-alpha-male-duck-alpha-female-duck-gif-7005165387130923807",
+    "https://tenor.com/ca/view/ducks-race-gif-5519904",
+    "https://tenor.com/ca/view/duck-badling-duck-walk-quack-quack-duck-take-over-gif-14583973",
+    "https://tenor.com/ca/view/ducks-gif-19474588",
     "https://tenor.com/ca/view/duck-waddle-gif-12573743802001671415"
 ]
 

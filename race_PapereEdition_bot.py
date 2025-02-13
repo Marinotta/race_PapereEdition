@@ -18,37 +18,26 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Duck GIFs for top performers
 duck_gifs = [
-    "https://tenor.com/ca/view/pato-gif-11059602315596939885",
-    "https://tenor.com/ca/view/duck-gif-21256906",
-    "https://tenor.com/ca/view/twerken-twerk-duck-maincord-gif-25993381",
-    "https://tenor.com/ca/view/taskmaster-tm-alex-horne-inflatable-duck-rubber-duck-gif-5430158460302803264",
-    "https://tenor.com/ca/view/duck-waddle-gif-12573743802001671415",
-    "https://tenor.com/ca/view/duck-gif-12859659001105063589",
-    "https://tenor.com/ca/view/canard-duck-sleepy-asleep-tired-gif-17506958111258810547",
-    "https://tenor.com/ca/view/shenmue-shenmue2-shenmue-duck-racing-shenmue-duck-racing-start-duck-racing-gif-25744150",
-    "https://tenor.com/ca/view/excited-dancing-ducks-gif-3639054",
-    "https://tenor.com/ca/view/running-ducks-ducks-running-racing-racing-ducks-gif-27273716",
-    "https://tenor.com/ca/view/vlod-rubber-duck-duck-vlod2-bathtub-gif-3004830228421712541",
-    "https://tenor.com/ca/view/shenmue-shenmue2-shenmue-duck-racing-shenmue-duck-racing-start-duck-racing-gif-25744150",
-    "https://tenor.com/ca/view/ducks-ducks-are-laughing-laughter-point-a-finger-ducks-laughing-gif-12948112141241137122",
-    "https://tenor.com/ca/view/duck-sigma-duck-alpha-duck-alpha-male-duck-alpha-female-duck-gif-7005165387130923807",
-    "https://tenor.com/ca/view/ducks-race-gif-5519904",
-    "https://tenor.com/ca/view/duck-badling-duck-walk-quack-quack-duck-take-over-gif-14583973",
-    "https://tenor.com/ca/view/ducks-gif-19474588",
-    "https://tenor.com/ca/view/duck-waddle-gif-12573743802001671415"
+    "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGR3eHpsMGptdXl3dmpqdnRvNmczeTlsaG53c25obTN4cmh2azQyMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7OxMSjThgSRgsHXOFc/giphy.gif",
+    "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnJ5d2doeW9xc244ZHJndnlzZ3U1dGI4N3l2dHo5MmF0ejBvN3hyZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WYPP1DQ7pnXBUWXdRw/giphy.gif",
+    "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTltNHFsNmdiaDk4aDk5d2w4aXRqN2I2b2lkN2FzdHVxdXkxOW1kbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2Je24Ke23jHohsvS/giphy.gif",
+    "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzZ3NWNreXB6cnJrMm5ubjRybnNhdnR4NWgyeHZ6eXNtNDMzYTVsYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RQ7rwyOeftc5z2HTyc/giphy.gif",
+    "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3RscGpvdXZiaXJ1eXRxNTN2NTFybzF3azQwZmo0Z2JtYnhzbXl1cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/krewXUB6LBja/giphy.gif",
+    "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW9qNXJvNjNuamg4bTg4cno5bnJqNGdlZ3FudWliZnI0eGZscWp3cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WiTFa9I5AfrEY/giphy.gif",
+    "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGRvdTRyMzVudWlld2p4dnpudHdkbDdiM3l3cXRseW15OThwaGZvcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/82nxC1u2BC8VU1wiZq/giphy.gif",
+    "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmIxeWpnN2g4djE2Y2ZvbDVyZWF2cW80ZGpvbzQwaTRoMTQyeGNtdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WUuypTBVGuwhi/giphy.gif",
+    "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTExa3prc2c0a3U2dnl2OTlpbThuNGUyd2Y0a3kyajV0Nm45aWR4cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YdSSSyGEPkzTi/giphy.gif",
+    "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXljcWVseXBsa2s2YWRhN2g2bGloZWVtYnoyMTlwcWRpMGc1N2g3ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eGph4tozipTDW/giphy.gif",
+    "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Y1Njg5cjJtczVzNmZtam94ZGNvcThvN2pqZHhxZjE1YzdvZXN0biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/e2CIuhhEz7nJ6/giphy.gif",
+    "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd25nbnl3eHJzMGE1M2ptem1tbnFnMG41enFqdWNzanloOTRienpwaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wOhhxlCn4e4HaCYQwr/giphy.gif",
+    "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2ZleXRlbWZtZnJtcHBiaDZvcmNjMmJ0OXBpbzB0cWcweWFuaTR3aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KY5itWvIINKs8/giphy.gif",
+    "https://tenor.com/ca/view/duck-sigma-duck-alpha-duck-alpha-male-duck-alpha-female-duck-gif-7005165387130923807"
 ]
 
 mosconi_gifs = [
-    "https://tenor.com/view/mosconi-germano-mosconi-ah-non-lo-so-io-gif-11967977",
-    "https://tenor.com/view/mosconi-germano-chop-chop-chiss%C3%A0che-non-m-incazza-eh-gif-14096850",
-    "https://tenor.com/ca/view/if-i-dont-curse-now-italian-meme-gif-12268654",
-    "https://tenor.com/ca/view/non-bestemmiare-germano-mosconi-gif-24841842",
-    "https://tenor.com/ca/view/germano-mosconi-non%C3%A8possibile-dio-cane-gif-21765301",
-    "https://tenor.com/ca/view/germano-mosconi-vai-in-mona-porco-dio-gif-16047543",
-    "https://tenor.com/ca/view/mosconi-ma-che-oh-gif-12572262",
-    "https://tenor.com/ca/view/if-i-don-curse-italian-meme-gif-12268541",
-    "https://tenor.com/ca/view/portanna-mosconi-portannalamadonna-gif-11830913"
-]
+    "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGxjd2h3aDJ2YnVnZTV3eWM0bDFxcmp5enFjazZtZ2twa2pvOHdpYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13QHE6awZWd01G/giphy.gif",
+    "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDJ2amhnb282ejZjejFxcHFucW16NjFoa2JtbW5xa3dsMTIxYWJ2NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MFCIr88rNNE52/giphy.gif",
+    "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjBma2o5eXB6ZzQ3MDE3M2tnanpmYzFvY3Z2OGY3dmg2YXExYTc0aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l1J9Oo7oxIVnkN0Zy/giphy.gif"
 
 # Command to upload the ranking
 @bot.command()

@@ -38,6 +38,7 @@ mosconi_gifs = [
     "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGxjd2h3aDJ2YnVnZTV3eWM0bDFxcmp5enFjazZtZ2twa2pvOHdpYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13QHE6awZWd01G/giphy.gif",
     "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDJ2amhnb282ejZjejFxcHFucW16NjFoa2JtbW5xa3dsMTIxYWJ2NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MFCIr88rNNE52/giphy.gif",
     "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjBma2o5eXB6ZzQ3MDE3M2tnanpmYzFvY3Z2OGY3dmg2YXExYTc0aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l1J9Oo7oxIVnkN0Zy/giphy.gif"
+]
 
 # Command to upload the ranking
 @bot.command()
